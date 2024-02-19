@@ -11,6 +11,7 @@ foreach($user->fetch_array() as $k =>$v){
 	
 	<form action="" id="manage-user">
 		<input type="hidden" name="id" value="<?php echo isset($meta['id']) ? $meta['id']: '' ?>">
+		
 		<div class="form-group">
 			<label for="name">Name</label>
 			<input type="text" name="name" id="name" class="form-control" value="<?php echo isset($meta['name']) ? $meta['name']: '' ?>" required>
@@ -36,6 +37,8 @@ foreach($user->fetch_array() as $k =>$v){
 	$('#manage-user').submit(function(e){
 		e.preventDefault();
 		start_load()
+
+
 		$.ajax({
 			url:'ajax.php?action=save_user',
 			method:'POST',
