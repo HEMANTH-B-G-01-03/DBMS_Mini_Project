@@ -42,8 +42,8 @@
                     <input type="password" id="password" name="password" placeholder="Enter your Password" class="form-control" required="">
                 </div>
               
-                <div class="d-grid mb-3 px-5">
-                    <button class="btn btn-success ml-5  " type="submit">Login</button>
+                <div class="col-sm-4 ml-4">
+                    <button class="btn btn-success ml-3  " type="submit">Login</button>
                 </div>
             </form>
             <div class="text-center mt-3"> <!-- Add a container for the "Create New Account" link -->
