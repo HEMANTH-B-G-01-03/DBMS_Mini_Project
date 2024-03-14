@@ -18,15 +18,18 @@
         // Check if form is submitted
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Prepare and bind the SQL statement
-            $stmt = $conn->prepare("INSERT INTO users (name, username, password, type) VALUES (?, ?, ?, ?)");
-            $stmt->bind_param("sssi", $name, $username, $password, $type);
+            $stmt = $conn->prepare("INSERT INTO users (name, address, contact, username, password, type) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssss", $name, $address, $contact, $username, $password, $type);
 
             // Set parameters from the form data
             $name = $_POST['name'];
+            $address = $_POST['address'];
+            $contact = $_POST['contact'];
             $username = $_POST['username'];
             $password = $_POST['password'];
             $type = $_POST['type'];
-
+            
+            
             // Check if the username already exists
             $check_stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
             $check_stmt->bind_param("s", $username);
@@ -55,6 +58,8 @@
                     echo '<div class="alert alert-danger" role="alert">
                             Error occurred while signing up. Please try again later.
                           </div>';
+
+
                 }
             }
 
