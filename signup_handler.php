@@ -19,7 +19,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Prepare and bind the SQL statement
             $stmt = $conn->prepare("INSERT INTO users (name, address, contact, username, password, type) VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssss", $name, $address, $contact, $username, $password, $type);
+            $stmt->bind_param("sssssi", $name, $address, $contact, $username, $password, $type);
 
             // Set parameters from the form data
             $name = $_POST['name'];

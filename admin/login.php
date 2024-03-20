@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Admin | Online Flight Booking System</title>
+  <title>Admin | Airport manangement System</title>
  	
 
 <?php include('./header.php'); ?>
@@ -95,7 +95,7 @@ div#login-left::before,div#login-right::before {
   							<label for="password" class="control-label">Password</label>
   							<input type="password" id="password" name="password" class="form-control">
   						</div>
-  						<center><button class="btn-sm btn-block btn-wave col-md-4 btn-primary">Login</button></center>
+  						<center> <button class="btn-sm btn-block btn-wave col-md-4 btn-primary">Login</button></center>
   					</form>
   				</div>
   			</div>
@@ -126,9 +126,11 @@ div#login-left::before,div#login-right::before {
 			success:function(resp){
 				if(resp == 1){
 					location.href ='index.php?page=home';
-				}else if(resp == 2){
+				}
+				else if(resp == 2){
 					location.href ='voting.php';
-				}else{
+				}
+				else{
 					$('#login-form').prepend('<div class="alert alert-danger">Username or password is incorrect.</div>')
 					$('#login-form button[type="button"]').removeAttr('disabled').html('Login');
 				}
